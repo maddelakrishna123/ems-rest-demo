@@ -2,6 +2,8 @@ package com.cts.intcdb22jf003.ems.controllers;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
@@ -34,7 +36,7 @@ public class EmployeeController {
 	@PostMapping("/employee")
 	
 	//@ResponseStatus(HttpStatus.CREATED)
-	public ResponseEntity<Employee> create( @RequestBody Employee emp)
+	public ResponseEntity<Employee> create( @Valid @RequestBody Employee emp)
 	{
 		return new ResponseEntity<Employee>(service.createNewEmployee(emp), HttpStatus.CREATED);
 	}
