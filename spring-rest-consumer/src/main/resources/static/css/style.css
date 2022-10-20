@@ -1,0 +1,68 @@
+@charset "ISO-8859-1";
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	background-color: #e6e6e6;
+}
+
+.header 
+{
+	background-color: #400000;
+	margin: auto;
+	height: auto;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+.title
+{
+	color: white;
+	font-family: sans-serif;
+	text-align: center;
+}
+
+
+.menus
+{
+	width: 100%;
+	margin: auto;
+	text-align: right;
+}
+li {
+	display: inline;
+}
+.menus li a {
+	color: #ff8000;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: bolder;
+	font-family: cursive;
+}
+
+.login-form
+{
+	width: 400px;
+	margin: auto;
+	height: 500px;
+	padding: 10px;
+}
+
+.form-title
+{
+	color: white;
+	font-family: sans-serif;
+	text-align: center;
+}
+.error
+{
+	color: red;
+}
+
+
+.user-username{
+	color: white;
+	font-family: fantasy;
+	font-style: italic;
+}
