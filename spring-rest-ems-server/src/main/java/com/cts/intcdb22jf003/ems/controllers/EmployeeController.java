@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -30,14 +31,22 @@ import net.bytebuddy.pool.TypePool.Default.ReaderMode;
 
 @RestController
 @Slf4j
+@RequestMapping("/api")
 public class EmployeeController {
 	@Autowired
   private EmployeeServices service;
+	
+	@PostMapping("/hello")
+	public String hello(@RequestBody String name)
+	{
+		return "Welcome "+name;
+	}
 	@PostMapping("/employee")
 	
 	//@ResponseStatus(HttpStatus.CREATED)
 	public ResponseEntity<Employee> create( @Valid @RequestBody Employee emp)
 	{
+		
 		return new ResponseEntity<Employee>(service.createNewEmployee(emp), HttpStatus.CREATED);
 	}
 	@GetMapping("/employee")
@@ -54,10 +63,23 @@ public class EmployeeController {
 	}
 	
 	
-	@GetMapping("/employee/{id}")
-	public Employee getEmployee(@PathVariable("id") int id)
+	
+	
+	
+	
+	  @GetMapping("/employee/{id}")
+	  public Employee getEmployee(@PathVariable("id")int id)
+	  { 
+		  return service.getEmployeeById(id);
+		  
+	  
+	  }
+	 
+	
+	@GetMapping("/employeebyusername/{username}")
+	public Employee getEmployeeByUserName(@PathVariable("username") String  username)
 	{
-		return service.getEmployeeById(id);
+		return service.getEmployeeByUserName(username);
 	}
 	
 	@DeleteMapping("/employee")

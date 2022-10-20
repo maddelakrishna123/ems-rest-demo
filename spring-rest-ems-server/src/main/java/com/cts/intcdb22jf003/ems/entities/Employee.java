@@ -2,6 +2,7 @@ package com.cts.intcdb22jf003.ems.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
@@ -23,7 +24,7 @@ import lombok.ToString;
 @Table
 public class Employee {
     @Id
-  
+  @GeneratedValue
 	private int id;
 	private String name;
 	private double salary;
