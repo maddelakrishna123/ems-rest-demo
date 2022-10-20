@@ -1,0 +1,2 @@
+drop table if exists employee;
+create table employee(id int primary key, name varchar(200),age int, email varchar(200) unique, mobile varchar(200),salary double, username varchar(200) unique,password varchar(200));

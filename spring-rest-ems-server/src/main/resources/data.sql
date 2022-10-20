@@ -1,0 +1,2 @@
+insert into employee(id,name, email, mobile, salary,username,password,age)values(101,'krishna','krishna@gmail.com','8500493754',70000,'krishna123','12345',31);
+insert into employee(id,name, email, mobile, salary,username,password,age)values(102,'Nithin','nithin@gmail.com','8500493754',80000,'nitin123','12345',30);
