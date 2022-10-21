@@ -25,7 +25,7 @@
 hello ${emp}
 
 <div class="login-form">
-<form:form action="#" method="post" modelAttribute="emp">
+<form:form action="profile" method="post" modelAttribute="emp">
 
 <table>
 <form:input type="hidden" path="id"/>

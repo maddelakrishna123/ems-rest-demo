@@ -5,8 +5,10 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -77,6 +79,17 @@ public class EmployeeeConsumerController {
 		String username = (String)session.getAttribute("username");
 		System.out.println("Session value "+username);
 		model.addAttribute("emp", services.getEmployee(username));
+		return "profile";
+	}
+	
+	@PostMapping("/profile")
+	public String profile(@ModelAttribute("emp") Employee emp, Model model,HttpSession session)
+	{
+		
+		System.out.println(emp);
+		String username = (String)session.getAttribute("username");
+		//System.out.println("Session value "+username);
+		model.addAttribute("emp", services.updateEmployee(emp));
 		return "profile";
 	}
 	@GetMapping("/userhome")

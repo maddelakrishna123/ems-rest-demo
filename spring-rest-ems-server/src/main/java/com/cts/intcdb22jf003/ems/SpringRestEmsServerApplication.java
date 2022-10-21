@@ -9,6 +9,7 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
 import com.cts.intcdb22jf003.ems.entities.Employee;
 import com.cts.intcdb22jf003.ems.repositories.EmployeeRepository;
@@ -18,7 +19,10 @@ public class SpringRestEmsServerApplication {
 @Autowired
 	private EmployeeRepository repo;
 	public static void main(String[] args) {
-		SpringApplication.run(SpringRestEmsServerApplication.class, args);
+	ApplicationContext context =	SpringApplication.run(SpringRestEmsServerApplication.class, args);
+	
+
+	//Stream.of(context.getBeanDefinitionNames()).forEach(t->System.out.println(t));
 	}
 	
 	
